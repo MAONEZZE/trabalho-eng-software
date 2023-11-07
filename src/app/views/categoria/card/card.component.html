@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header class="borda p-2">
+    <mat-card-title>Titulo: {{ categoria.titulo }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-actions align="end">
+    <button
+      mat-icon-button 
+      color="primary"
+      routerLink="/categorias/editar/{{categoria.id}}">
+
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button 
+      color="primary"
+      routerLink="/categorias/excluir/{{categoria.id}}">
+
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
+

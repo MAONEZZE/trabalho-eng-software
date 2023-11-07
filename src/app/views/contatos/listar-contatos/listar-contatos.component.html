@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <!-- Conteúdo principal -->
+    <div class="col-12 col-md-10 col-lg-9 mx-auto mt-5">
+      <!-- Titulo -->
+      <div class="text-md-start">
+        <h1 class="fw-bold text-primary">Listar Contatos</h1>
+        <hr />
+      </div>
+
+      <!-- Barra de Ações -->
+
+      <div class="d-grid d-md-flex gap-2 mt-1">
+        <a
+          routerLink='/contatos/inserir'
+          role="button"
+          class="btn btn-primary me-md-1">
+
+          <i class="bi bi-plus-circle me-2"></i>
+          Novo Contato
+        </a>
+
+        <button
+          (click)="buscarFav()"
+          class="btn btn-primary me-md-1 bi">
+          
+          <i [ngClass]="favClicado == true? 'bi-heart-fill' : 'bi-heart'"></i>
+          Favoritos
+        </button>
+      </div>
+      
+      <!-- Listagem de Registros -->
+      
+      <div class="row mt-3 g-3 justify-items-sm-center">
+        <div *ngFor="let contato of contatos" class="col-4">
+          <app-card [contato]="contato" (onDesfavoritarCard)="removerFav($event)"></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

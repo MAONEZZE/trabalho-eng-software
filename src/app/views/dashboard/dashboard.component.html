@@ -1,0 +1,70 @@
+<section class="mt-5" *ngIf="(usuario$ | async) as usuario">
+  <div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="text-primary fs-2 mt-2">Seja Bem-Vindo(a), {{ usuario.nome }}!</mat-card-title>
+      </mat-card-header>
+
+      
+      <mat-card-content>
+        <div class="row p-3">
+          <mat-divider></mat-divider>
+          <div class="d-flex justify-content-center">
+            <div class="fs-5 col-6">
+              <p class="mt-4">
+                O <span class="text-primary fw-semibold">e-Agenda</span> é uma plataforma projetada 
+                para otimizar a organização 
+                da sua rotina diária, oferecendo ferramentas para facilitar 
+                o acesso, controle e planejamento de suas atividades diárias. 
+                Com o <span class="text-primary fw-semibold">e-Agenda</span>, você também pode 
+                gerenciar tarefas, manter uma lista detalhada 
+                de contatos, agendar compromissos com eficiência e controlar suas despesas, 
+                tudo em um só lugar, assim proporcionando um software 
+                simples e eficaz para ajudá-lo a gerenciar sua vida de forma mais 
+                produtiva e conveniente.
+              </p>
+            </div>
+  
+            <!-- <div class="w-25">
+              <img src="/assets/dashboard-image.svg" class="img-fluid" />
+            </div> -->
+            
+          </div>
+  
+  
+  
+          <h2 class="justify-content-center d-md-flex gap-2 mt-4 text-primary fw-semibold">O que você deseja gerenciar?</h2>
+          <mat-divider></mat-divider>
+          
+          <mat-card-actions class="d-grid justify-content-center d-md-flex gap-2 mt-2">
+            <button mat-raised-button color="primary" routerLink="/contatos/listar">
+              <mat-icon>group</mat-icon>
+              Contatos
+            </button>
+            <button mat-raised-button color="primary" routerLink="/compromissos/listar">
+              <mat-icon>beenhere</mat-icon>
+              Compromissos
+            </button>
+            <button mat-raised-button color="primary" routerLink="/despesas/listar">
+              <mat-icon class="me-2">currency_exchange</mat-icon>
+              Despesas
+            </button>
+            <button mat-raised-button color="primary" routerLink="/categorias/listar">
+              <mat-icon class="me-2">sell</mat-icon>
+              Categorias
+            </button>
+            <button mat-raised-button color="primary" routerLink="/tarefas/listar">
+              <mat-icon class="me-2">check_circle</mat-icon>
+              Tarefas
+            </button>
+          </mat-card-actions>
+  
+        <!-- <div class="col-12 col-md-5">
+          <img src="/assets/dashboard-image.svg" class="img-fluid" />
+        </div> -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section> 
+

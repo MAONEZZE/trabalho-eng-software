@@ -1,0 +1,48 @@
+<mat-toolbar class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button mat-button routerLink="/" class="navbar-brand fw-semibold">
+      <mat-icon color="primary">assignment_turned_in</mat-icon>
+      e-Agenda
+    </button>
+    <button (click)="estaColapsado = !estaColapsado" class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngbCollapse]="estaColapsado == true">
+
+      <div class="links w-100 text-center" *ngIf="(usuarioEstaLogado$ | async) == true">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <button mat-button color="primary" class="nav-link " routerLinkActive="fw-semibold" routerLink="/contatos/listar">
+            Contatos
+          </button>
+          <button mat-button color="primary" class="nav-link" routerLinkActive="fw-semibold" routerLink="/compromissos/listar">
+            Compromissos
+          </button>
+          <button mat-button color="primary" class="nav-link" routerLinkActive="fw-semibold" routerLink="/categorias/listar">
+            Categorias
+          </button>
+          <button mat-button color="primary" class="nav-link" routerLinkActive="fw-semibold" routerLink="/despesas/listar">
+            Despesas
+          </button>
+          <button mat-button color="primary" class="nav-link" routerLinkActive="fw-semibold" routerLink="/tarefas/listar">
+            Tarefas
+          </button>
+
+          <mat-spinner 
+            mode="indeterminate"
+            *ngIf="(estaCarregando$ | async)"
+            color="primary"
+            style="position: fixed; top: 10%; left: 80%; width: 30px; z-index: 1000px;"/>
+
+          <li class="nav-item ms-auto">
+            <button mat-raised-button color="primary" class="px-4" (click)="sair()">
+              <mat-icon>meeting_room</mat-icon>
+              Logout
+            </button>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
